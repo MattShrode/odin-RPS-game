@@ -9,7 +9,10 @@ function playGame() {
      console.log(welcome());
 
      let computerChoice = computerPlay();
-     console.log(computerChoice);
+
+     let userChoice = userPlay();
+     console.log(userChoice);
+     
 
 }
 
@@ -17,7 +20,7 @@ function playGame() {
 
 function welcome() {
 
-    return "Let's Play Rock Paper Scissors! I'll make my selection; go ahead and make yours!";
+    return "Let's Play Rock Paper Scissors! I've made my selection." ;
 
 }
 
@@ -49,6 +52,13 @@ function generateRandomInt(min,max) {
 }
 
 //Ask the user for their choice
+
+function userPlay() {
+
+    let choice = prompt("Make your selection!");
+    return choice;
+
+}
 
 //Comapre the user's choice to the computer's choice
 
