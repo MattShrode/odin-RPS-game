@@ -13,8 +13,9 @@ function playGame() {
      let userChoice = userPlay();
 
      let result = playRound(userChoice, computerChoice);
-     console.log(`I chose ${computerChoice} and you chose ${userChoice}.`)
-     console.log(result);
+
+     display(userChoice, computerChoice, result);
+     
      
 
 }
@@ -116,6 +117,13 @@ function playRound(userChoice, computerChoice) {
 }
 
 //Display the winner
+
+function display(userChoice, computerChoice, result) {
+
+    console.log(`I chose ${computerChoice} and you chose ${userChoice}.`);
+    console.log(result);
+
+}
 
 //Incrememnt the score counter
 
