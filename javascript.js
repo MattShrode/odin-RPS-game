@@ -82,32 +82,31 @@ function inputChecker(string) {
 
 function playRound(userChoice, computerChoice) {
 
-    switch (userChoice.toLowerCase()) {
-        case "rock":
-            if (computerChoice.toLowerCase() === "rock") {
-                return "draw";
-            } else if (computerChoice.toLowerCase() === "paper") {
-                return "playerLose";
-            } else
-                return "playerWin";
-            break;
-        case "paper":
-            if (computerChoice.toLowerCase() === "paper") {
-                return "draw";
-            } else if (computerChoice.toLowerCase() === "scissors") {
-                return "playerLose";
-            } else
-                return "playerWin";
-            break;
-        case "scissors":
-            if (computerChoice.toLowerCase() === "scissors") {
-                return "draw";
-            } else if (computerChoice.toLowerCase() === "rock") {
-                return "playerLose";
-            } else
-                return "playerWin";
-            break;
+    if (userChoice.toLowerCase() === computerChoice.toLowerCase()) {
+        return "draw";
+    } else {
+        switch (userChoice.toLowerCase()) {
+            case "rock":
+                if (computerChoice.toLowerCase() === "paper") {
+                    return "playerLose";
+                } else
+                    return "playerWin";
+                break;
+            case "paper":
+                if (computerChoice.toLowerCase() === "scissors") {
+                    return "playerLose";
+                } else
+                    return "playerWin";
+                break;
+            case "scissors":
+                if (computerChoice.toLowerCase() === "rock") {
+                    return "playerLose";
+                } else
+                    return "playerWin";
+                break;
+        }
     }
+    
 }
 
 //Display the winner
