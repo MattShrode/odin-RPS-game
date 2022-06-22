@@ -55,9 +55,28 @@ function generateRandomInt(min,max) {
 
 function userPlay() {
 
-    let choice = prompt("Make your selection!");
-    return choice;
+    let acceptable = false;
 
+    let choice = prompt("Make your selection!");
+    acceptable = inputChecker(choice);
+
+    while(!acceptable) {
+        choice = prompt("That is not a valid selection. Please choose rock, paper, or scissors.");
+        acceptable = inputChecker(choice);
+    }
+    return choice;
+}
+
+//Validate user's input
+
+function inputChecker(string) {
+
+    let stringCheck = string.toLowerCase();
+    
+        if (stringCheck === "rock" || stringCheck === "paper" || stringCheck === "scissors" || stringCheck === "scissor") {
+            return true;
+        } else
+            return false;
 }
 
 //Comapre the user's choice to the computer's choice
