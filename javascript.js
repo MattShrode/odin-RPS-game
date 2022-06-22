@@ -16,8 +16,6 @@ function playGame() {
 
      display(userChoice, computerChoice, result);
      
-     
-
 }
 
 //Greet user
@@ -25,7 +23,6 @@ function playGame() {
 function welcome() {
 
     return "Let's Play Rock Paper Scissors! I've already made my selection." ;
-
 }
 
 //Make a choice for the computer
@@ -44,7 +41,6 @@ function computerPlay() {
             return "Scissors"
             break;        
     }
-
 }
 
 //Generate a random number for the computer's choice
@@ -52,7 +48,6 @@ function computerPlay() {
 function generateRandomInt(min,max) {
 
     return Math.floor(min + Math.random() * (max - min +1));
-
 }
 
 //Ask the user for their choice
@@ -90,30 +85,29 @@ function playRound(userChoice, computerChoice) {
     switch (userChoice.toLowerCase()) {
         case "rock":
             if (computerChoice.toLowerCase() === "rock") {
-                return "It's a draw!";
+                return "draw";
             } else if (computerChoice.toLowerCase() === "paper") {
-                return "Paper beats rock! I win!";
+                return "playerLose";
             } else
-                return "Rock beats scissors! You win!";
+                return "playerWin";
             break;
         case "paper":
             if (computerChoice.toLowerCase() === "paper") {
-                return "It's a draw!";
+                return "draw";
             } else if (computerChoice.toLowerCase() === "scissors") {
-                return "Scissors beats paper! I win!";
+                return "playerLose";
             } else
-                return "Paper beats rock! You win!";
+                return "playerWin";
             break;
         case "scissors":
             if (computerChoice.toLowerCase() === "scissors") {
-                return "It's a draw!";
+                return "draw";
             } else if (computerChoice.toLowerCase() === "rock") {
-                return "Rock beats scissors! I win!";
+                return "playerLose";
             } else
-                return "Scissors beats paper! You win!";
+                return "playerWin";
             break;
     }
-
 }
 
 //Display the winner
@@ -121,10 +115,15 @@ function playRound(userChoice, computerChoice) {
 function display(userChoice, computerChoice, result) {
 
     console.log(`I chose ${computerChoice} and you chose ${userChoice}.`);
-    console.log(result);
 
+    if (result === "draw") {
+        console.log("It's a draw!");
+    }else if (result === "playerWin") {
+        console.log(`${userChoice} beats ${computerChoice}! You win!`);
+    }else
+        console.log(`${computerChoice} beats ${userChoice}! I win!`)
 }
 
-//Incrememnt the score counter
+//Increment the score counter
 
 //Begin next round
