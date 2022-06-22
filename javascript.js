@@ -11,7 +11,10 @@ function playGame() {
      let computerChoice = computerPlay();
 
      let userChoice = userPlay();
-     console.log(userChoice);
+
+     let result = playRound(userChoice, computerChoice);
+     console.log(`I chose ${computerChoice} and you chose ${userChoice}.`)
+     console.log(result);
      
 
 }
@@ -20,7 +23,7 @@ function playGame() {
 
 function welcome() {
 
-    return "Let's Play Rock Paper Scissors! I've made my selection." ;
+    return "Let's Play Rock Paper Scissors! I've already made my selection." ;
 
 }
 
@@ -71,15 +74,46 @@ function userPlay() {
 
 function inputChecker(string) {
 
-    let stringCheck = string.toLowerCase();
+    let check = string.toLowerCase();
     
-        if (stringCheck === "rock" || stringCheck === "paper" || stringCheck === "scissors" || stringCheck === "scissor") {
+        if (check === "rock" || check === "paper" || check === "scissors") {
             return true;
         } else
             return false;
 }
 
-//Comapre the user's choice to the computer's choice
+//Compare the user's choice to the computer's choice
+
+function playRound(userChoice, computerChoice) {
+
+    switch (userChoice.toLowerCase()) {
+        case "rock":
+            if (computerChoice.toLowerCase() === "rock") {
+                return "It's a draw!";
+            } else if (computerChoice.toLowerCase() === "paper") {
+                return "Paper beats rock! I win!";
+            } else
+                return "Rock beats scissors! You win!";
+            break;
+        case "paper":
+            if (computerChoice.toLowerCase() === "paper") {
+                return "It's a draw!";
+            } else if (computerChoice.toLowerCase() === "scissors") {
+                return "Scissors beats paper! I win!";
+            } else
+                return "Paper beats rock! You win!";
+            break;
+        case "scissors":
+            if (computerChoice.toLowerCase() === "scissors") {
+                return "It's a draw!";
+            } else if (computerChoice.toLowerCase() === "rock") {
+                return "Rock beats scissors! I win!";
+            } else
+                return "Scissors beats paper! You win!";
+            break;
+    }
+
+}
 
 //Display the winner
 
