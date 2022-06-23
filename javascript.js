@@ -1,5 +1,11 @@
 /* Javascript */
 
+// Inititalize Score Variables
+
+let playerScore = 0;
+let computerScore = 0;
+let ties = 0;
+
 //Begin match
 
 playGame();
@@ -15,6 +21,12 @@ function playGame() {
      let result = playRound(userChoice, computerChoice);
 
      display(userChoice, computerChoice, result);
+
+     score(result);
+
+     console.log(`Player Wins: ${playerScore} \nComputer Wins: ${computerScore} \nTies: ${ties}`);
+
+
      
 }
 
@@ -124,5 +136,20 @@ function display(userChoice, computerChoice, result) {
 }
 
 //Increment the score counter
+
+function score(result) {
+
+    switch (result) {
+        case "playerWin":
+            ++playerScore;
+            break;
+        case "playerLose":
+            ++computerScore;
+            break;
+        case "draw":
+            ++ties;
+            break;
+    }
+}
 
 //Begin next round
