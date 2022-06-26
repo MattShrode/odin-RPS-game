@@ -12,7 +12,13 @@ playGame();
 
 function playGame() {
 
-     console.log(welcome());
+    for (let i = 0; i < 5; i++) {
+     
+     if (i == 0) {
+        console.log(welcome());
+     } else if (i != 0) {
+        console.log(again());
+     }
 
      let computerChoice = computerPlay();
 
@@ -26,13 +32,30 @@ function playGame() {
 
      displayScore();
 
+     if (i == 4) {
+        console.log(bye());
+     }
+    }
+
 }
 
 //Greet user
 
 function welcome() {
 
-    return "Let's Play Rock Paper Scissors! I've already made my selection." ;
+    return "Let's Play Rock Paper Scissors! I've already made my selection.";
+}
+
+//Repeating the game
+
+function again() {
+    return "Next round! I've made my selection.";
+}
+
+//Ending the game
+
+function bye() {
+    return "Thanks for playing!";
 }
 
 //Make a choice for the computer
@@ -157,5 +180,3 @@ function displayScore() {
     console.log(`Player Wins: ${playerScore} \nComputer Wins: ${computerScore} \nTies: ${ties}`);
 
 }
-
-//Begin next round
