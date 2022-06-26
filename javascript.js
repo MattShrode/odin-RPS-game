@@ -20,14 +20,12 @@ function playGame() {
 
      let result = playRound(userChoice, computerChoice);
 
-     display(userChoice, computerChoice, result);
-
      score(result);
 
-     console.log(`Player Wins: ${playerScore} \nComputer Wins: ${computerScore} \nTies: ${ties}`);
+     displayWinner(userChoice, computerChoice, result);
 
+     displayScore();
 
-     
 }
 
 //Greet user
@@ -123,7 +121,7 @@ function playRound(userChoice, computerChoice) {
 
 //Display the winner
 
-function display(userChoice, computerChoice, result) {
+function displayWinner(userChoice, computerChoice, result) {
 
     console.log(`I chose ${computerChoice} and you chose ${userChoice}.`);
 
@@ -150,6 +148,14 @@ function score(result) {
             ++ties;
             break;
     }
+}
+
+//Display Score
+
+function displayScore() {
+
+    console.log(`Player Wins: ${playerScore} \nComputer Wins: ${computerScore} \nTies: ${ties}`);
+
 }
 
 //Begin next round
