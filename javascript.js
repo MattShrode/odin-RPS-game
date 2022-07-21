@@ -8,17 +8,17 @@ let ties = 0;
 
 //Begin match
 
-playGame();
+//playGame();
 
 function playGame() {
 
-    for (let i = 0; i < 5; i++) {
+    /*for (let i = 0; i < 5; i++) {
      
      if (i == 0) {
         console.log(welcome());
      } else if (i != 0) {
         console.log(again());
-     }
+     }*/
 
      let computerChoice = computerPlay();
 
@@ -35,9 +35,14 @@ function playGame() {
      if (i == 4) {
         console.log(bye());
      }
-    }
+    //}
 
 }
+
+const userChoice = document.querySelectorAll('#button');
+
+userChoice.forEach(button => button.addEventListener('click', userPlay));
+
 
 //Greet user
 
@@ -87,7 +92,7 @@ function generateRandomInt(min,max) {
 
 function userPlay() {
 
-    let acceptable = false;
+    /*let acceptable = false;
 
     let choice = prompt("Make your selection!");
     acceptable = inputChecker(choice);
@@ -96,7 +101,9 @@ function userPlay() {
         choice = prompt("That is not a valid selection. Please choose rock, paper, or scissors.");
         acceptable = inputChecker(choice);
     }
-    return choice;
+    return choice;*/
+
+    console.log(this);
 }
 
 //Validate user's input
