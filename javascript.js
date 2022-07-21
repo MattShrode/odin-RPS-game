@@ -92,9 +92,9 @@ function generateRandomInt(min,max) {
 
 //Ask the user for their choice
 
-function userPlay() {
+/*function userPlay() {
 
-    /*let acceptable = false;
+    let acceptable = false;
 
     let choice = prompt("Make your selection!");
     acceptable = inputChecker(choice);
@@ -103,14 +103,14 @@ function userPlay() {
         choice = prompt("That is not a valid selection. Please choose rock, paper, or scissors.");
         acceptable = inputChecker(choice);
     }
-    return choice;*/
+    return choice;
 
     console.log(this.className);
-}
+}*/
 
 //Validate user's input
 
-function inputChecker(string) {
+/*function inputChecker(string) {
 
     let check = string.toLowerCase();
     
@@ -118,7 +118,7 @@ function inputChecker(string) {
             return true;
         } else
             return false;
-}
+}*/
 
 //Compare the user's choice to the computer's choice
 
