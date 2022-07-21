@@ -6,9 +6,11 @@ let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
 
+const userChoice = document.querySelectorAll('#button');
+
 //Begin match
 
-//playGame();
+userChoice.forEach(button => button.addEventListener('click', playGame));
 
 function playGame() {
 
@@ -22,7 +24,7 @@ function playGame() {
 
      let computerChoice = computerPlay();
 
-     let userChoice = userPlay();
+     let userChoice = this.className;
 
      let result = playRound(userChoice, computerChoice);
 
@@ -32,16 +34,16 @@ function playGame() {
 
      displayScore();
 
-     if (i == 4) {
+     /*if (i == 4) {
         console.log(bye());
-     }
+     }*/
     //}
 
 }
 
-const userChoice = document.querySelectorAll('#button');
 
-userChoice.forEach(button => button.addEventListener('click', userPlay));
+
+
 
 
 //Greet user
@@ -103,7 +105,7 @@ function userPlay() {
     }
     return choice;*/
 
-    console.log(this);
+    console.log(this.className);
 }
 
 //Validate user's input
